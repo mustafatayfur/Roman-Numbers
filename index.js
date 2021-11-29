@@ -1,6 +1,7 @@
-const input = document.querySelector("input").value;
+const input1 = document.querySelector("input");
 const convert = document.querySelector("button");
 const output = document.getElementById("#output");
+const input = +input1
 // console.log(input);
 
 convert.addEventListener('click', (input) => {
@@ -35,9 +36,10 @@ convert.addEventListener('click', (input) => {
   }
   
   return result;
+  output.innerText = `The Roman Number is ${result}`;
 })
 
-  console.log(intToRoman("21"));
+  // console.log(intToRoman("21"));
 
 
 //sudo code çalışması
