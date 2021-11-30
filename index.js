@@ -8,7 +8,9 @@ convert.addEventListener('click', convertToRomen);
 
 function convertToRomen() {
   
+
   let num = parseInt(input.value);
+ 
   const map = {
     M: 1000,
     CM: 900,
@@ -27,11 +29,11 @@ function convertToRomen() {
   let result = '';
   
   for (key in map) {  
+
     const repeatCounter = Math.floor(num / map[key]);
-    
+   
     if (repeatCounter !== 0) {
-      result += key.repeat(repeatCounter);
-               
+      result += key.repeat(repeatCounter);          
     }
     
     num %= map[key];
@@ -40,8 +42,11 @@ function convertToRomen() {
       result = result ;
     }
   }
-  
-  output.innerHTML = `The Roman Number is ${result}`;
+
+  if (isNaN(input.value) || (num == 0) || (input.value == "")){
+    output.innerHTML = "Please enter a  valid number value!";
+  }else {output.innerHTML = `The Roman Number is ${result}`
+  };
 }
 
   // console.log(intToRoman("21"));
