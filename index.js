@@ -1,13 +1,13 @@
 const input = document.querySelector("input");
 const convert = document.querySelector("button");
-const output = document.getElementById("#output");
+const output = document.getElementById("output");
 
-// console.log(input);
+console.log(input);
 
-convert.addEventListener('click', converToRomen);
+convert.addEventListener('click', convertToRomen);
 
 function convertToRomen() {
-
+  
   let num = parseInt(input.value);
   const map = {
     M: 1000,
@@ -30,15 +30,18 @@ function convertToRomen() {
     const repeatCounter = Math.floor(num / map[key]);
     
     if (repeatCounter !== 0) {
-      result += key.repeat(repeatCounter);         
+      result += key.repeat(repeatCounter);
+               
     }
     
     num %= map[key];
     
-    if (num === 0) return result;
+    if (num === 0) {
+      result = result ;
+    }
   }
   
-  output.innerText = `The Roman Number is ${result}`;
+  output.innerHTML = `The Roman Number is ${result}`;
 }
 
   // console.log(intToRoman("21"));
